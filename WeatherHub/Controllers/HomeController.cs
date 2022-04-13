@@ -15,10 +15,6 @@ namespace WeatherHub.Controllers
 
         public IActionResult Index()
         {
-            DateTime now = DateTime.Now;
-            ViewBag.DayOfTheWeek = now.DayOfWeek;
-            ViewBag.Date = now.ToLongDateString();
-
             return View();
         }
 

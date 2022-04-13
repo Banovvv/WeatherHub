@@ -1,12 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+	DateTime now = DateTime.Now;
 }
 
 <div id="weather_wrapper">
 			<div class="weatherCard">
 				<div class="currentTemp">
-					<span class="day">@ViewBag.DayOfTheWeek</span>
-					<span class="date">@ViewBag.Date</span>
+					<span class="day">@now.DayOfWeek</span>
+					<span class="date">@now.ToLongDateString()</span>
 					<span class="temp">23&deg;</span>
 					<span class="location">Lovech</span>
 				</div>
@@ -19,22 +20,22 @@
 				</div>
 				<div class="forecast">
 					<div class="forecastInfo">
-						<span class="forecastDay">WED</span>
+						<span class="forecastDay">@now.AddDays(1).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">9&deg; 18&deg;</span>
 						<span class="forecastConditions">&#xf00e;</span>
 					</div>
 					<div class="forecastInfo">
-						<span class="forecastDay">THU</span>
+						<span class="forecastDay">@now.AddDays(2).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">11&deg; 25&deg;</span>
 						<span class="forecastConditions">&#xf00a;</span>
 					</div>
 					<div class="forecastInfo">
-						<span class="forecastDay">FRI</span>
+						<span class="forecastDay">@now.AddDays(3).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">18&deg; 31&deg;</span>
 						<span class="forecastConditions">&#xf00b;</span>
 					</div>
 					<div class="forecastInfo">
-						<span class="forecastDay">SAT</span>
+						<span class="forecastDay">@now.AddDays(4).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">6&deg; 15&deg;</span>
 						<span class="forecastConditions">&#xf00d;</span>
 					</div>
