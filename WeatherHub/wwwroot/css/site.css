@@ -1,18 +1,196 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/css/weather-icons.min.css);
 
 body {
-  margin-bottom: 60px;
+    background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+    background-size: cover;
+}
+
+#weather_wrapper {
+    max-width: 400px;
+    margin: 250px auto;
+}
+
+.weatherCard {
+    width: 420px;
+    height: 400px;
+    font-family: 'Open Sans';
+    position: relative;
+}
+
+.currentTemp {
+    width: 220px;
+    height: 400px;
+    background: rgb(41, 41, 41);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 20px 20px;
+    border-bottom-left-radius: 20px 20px;
+}
+
+.currentWeather {
+    width: 200px;
+    height: 200px;
+    background: rgb(237, 237, 237);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 20px 20px;
+}
+
+.conditions {
+    font-family: weathericons;
+    font-size: 80px;
+    display: block;
+    padding: 20px 0 0;
+    text-align: center;
+}
+
+.info {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgb(237, 237, 237);
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.forecastInfo {
+    width: 200px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    background: rgb(153, 153, 234);
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: rgb(237, 237, 237);
+    border-bottom-right-radius: 20px 20px;
+}
+
+.rain {
+    width: 50%;
+    position: absolute;
+    left: 10px;
+    word-spacing: 60px;
+    top: 3px;
+}
+
+    .rain::before {
+        display: block;
+        content: '\f04e';
+        font-family: weathericons;
+        font-size: 40px;
+        left: 6px;
+        top: -4px;
+        position: absolute;
+    }
+
+.wind {
+    width: 50%;
+    right: -10px;
+    position: absolute;
+    word-spacing: 60px;
+    top: 3px;
+}
+
+    .wind::before {
+        display: block;
+        content: '\f050';
+        font-family: weathericons;
+        font-size: 25px;
+        left: -10px;
+        position: absolute;
+        top: 5px;
+    }
+
+.forecastDay {
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    padding: 2px 15px 0;
+}
+
+.forecastConditions {
+    font-family: weathericons;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 0px 0px 0px;
+    text-align: center;
+    position: relative;
+    top: -87px;
+    left: 15px;
+}
+
+.forecastDegrees {
+    width: 25%;
+    right: -5px;
+    position: relative;
+    display: block;
+    padding: 0px 0px 0px;
+    font-weight: 500;
+    word-spacing: 60px;
+    top: -45px;
+    left: 140px;
+}
+
+
+.forecast {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgb(153, 153, 234);
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-bottom-right-radius: 20px 20px;
+}
+
+.day {
+    font-size: 40px;
+    text-align: left;
+    display: block;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px 0;
+}
+
+.date {
+    font-size: 20px;
+    text-align: left;
+    display: block;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    padding: 0px 20px 0;
+}
+
+.temp {
+    font-size: 90px;
+    text-align: center;
+    display: block;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    padding: 90px 50px 0;
+}
+
+.location {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 40px;
+    display: block;
+    padding: 0px 0px 0px;
 }
