@@ -14,29 +14,29 @@
 				<div class="currentWeather">
 					<span class="conditions">&#xf00e;</span>
 					<div class="info">
-						<span class="rain">1.3 MM</span>
-						<span class="wind">@ViewBag.Forecast.Current.WindSpeed m/s</span>
+						<span class="rain">@ViewBag.Rain MM/H</span>
+						<span class="wind">@ViewBag.Forecast.Current.WindSpeed MET/S</span>
 					</div>
 				</div>
 				<div class="forecast">
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(1).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
-						<span class="forecastDegrees">9&deg; 18&deg;</span>
+						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[1].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[1].Temperature.Max)&deg;</span>
 						<span class="forecastConditions">&#xf00e;</span>
 					</div>
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(2).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
-						<span class="forecastDegrees">11&deg; 25&deg;</span>
+						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[2].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[2].Temperature.Max)&deg;</span>
 						<span class="forecastConditions">&#xf00a;</span>
 					</div>
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(3).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
-						<span class="forecastDegrees">18&deg; 31&deg;</span>
+						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[3].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[3].Temperature.Max)&deg;</span>
 						<span class="forecastConditions">&#xf00b;</span>
 					</div>
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(4).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
-						<span class="forecastDegrees">6&deg; 15&deg;</span>
+						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[4].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[4].Temperature.Max)&deg;</span>
 						<span class="forecastConditions">&#xf00d;</span>
 					</div>
 				</div>

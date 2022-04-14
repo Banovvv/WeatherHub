@@ -18,7 +18,11 @@ namespace WeatherHub.Controllers
         {
             WeatherController weatherController = new WeatherController();
             WeatherForecast forecast = await weatherController.GetWeatherForecast("Lovech", "metric");
+            double rain = forecast.Current.Rain != null ? forecast.Current.Rain.OneHour : 0;
+
             ViewBag.Forecast = forecast;
+            ViewBag.Rain = rain;
+
             return View();
         }
 
