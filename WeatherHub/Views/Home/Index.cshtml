@@ -1,6 +1,64 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 	DateTime now = DateTime.Now;
+
+	string GetWeatherIcon(string icon)
+	{
+		if(icon == "01d")
+		{
+			return "#xf00d";
+		}
+		else if (icon == "01n")
+		{
+			return "#xf02e";
+		}
+		else if (icon == "02d")
+		{
+			return "#xf002";
+		}
+		else if (icon == "02n")
+		{
+			return "#xf086";
+		}
+		else if (icon == "03d" || icon == "03n")
+		{
+			return "#xf041";
+		}
+		else if (icon == "04d" || icon == "04n")
+		{
+			return "#xf013";
+		}
+		else if (icon == "09d" || icon == "09n")
+		{
+			return "#xf01a";
+		}
+		else if (icon == "10d")
+		{
+			return "#xf008";
+		}
+		else if (icon == "10n")
+		{
+			return "#xf028";
+		}
+		else if (icon == "11d" || icon == "11n")
+		{
+			return "#xf01e";
+		}
+		else if (icon == "13d" || icon == "13n")
+		{
+			return "#xf01b";
+		}
+		else if (icon == "50d")
+		{
+			return "#xf003";
+		}
+		else if (icon == "50n")
+		{
+			return "#xf041";
+		}
+
+		return "#xf07b";
+	}
 }
 
 <div id="weather_wrapper">
@@ -12,7 +70,7 @@
 					<span class="location">Lovech</span>
 				</div>
 				<div class="currentWeather">
-					<span class="conditions">&#xf00e;</span>
+					<span class="conditions">&@GetWeatherIcon(ViewBag.Forecast.Current.Weather.Icon);</span>
 					<div class="info">
 						<span class="rain">@ViewBag.Rain MM/H</span>
 						<span class="wind">@ViewBag.Forecast.Current.WindSpeed MET/S</span>
@@ -22,22 +80,22 @@
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(1).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[1].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[1].Temperature.Max)&deg;</span>
-						<span class="forecastConditions">&#xf00e;</span>
+						<span class="forecastConditions">&@GetWeatherIcon(ViewBag.Forecast.Daily[1].Weather.Icon);</span>
 					</div>
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(2).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[2].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[2].Temperature.Max)&deg;</span>
-						<span class="forecastConditions">&#xf00a;</span>
+						<span class="forecastConditions">&@GetWeatherIcon(ViewBag.Forecast.Daily[2].Weather.Icon);</span>
 					</div>
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(3).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[3].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[3].Temperature.Max)&deg;</span>
-						<span class="forecastConditions">&#xf00b;</span>
+						<span class="forecastConditions">&@GetWeatherIcon(ViewBag.Forecast.Daily[3].Weather.Icon);</span>
 					</div>
 					<div class="forecastInfo">
 						<span class="forecastDay">@now.AddDays(4).DayOfWeek.ToString().ToUpper().Substring(0, 3)</span>
 						<span class="forecastDegrees">@Math.Round(ViewBag.Forecast.Daily[4].Temperature.Min)&deg; @Math.Round(ViewBag.Forecast.Daily[4].Temperature.Max)&deg;</span>
-						<span class="forecastConditions">&#xf00d;</span>
+						<span class="forecastConditions">&@GetWeatherIcon(ViewBag.Forecast.Daily[4].Weather.Icon);</span>
 					</div>
 				</div>
 			</div>

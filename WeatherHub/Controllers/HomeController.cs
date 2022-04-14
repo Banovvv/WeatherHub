@@ -17,7 +17,7 @@ namespace WeatherHub.Controllers
         public async Task<IActionResult> IndexAsync()
         {
             WeatherController weatherController = new WeatherController();
-            WeatherForecast forecast = await weatherController.GetWeatherForecast("Lovech", "metric");
+            WeatherForecast forecast = await weatherController.GetWeatherForecast(43.13, 24.71);
             double rain = forecast.Current.Rain != null ? forecast.Current.Rain.OneHour : 0;
 
             ViewBag.Forecast = forecast;
