@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WeatherHub.Models;
+using SimpleWeather;
 
 namespace WeatherHub.Controllers
 {
@@ -13,8 +14,11 @@ namespace WeatherHub.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
+            WeatherController weatherController = new WeatherController();
+            WeatherForecast forecast = await weatherController.GetWeatherForecast("Lovech", "metric");
+            ViewBag.Forecast = forecast;
             return View();
         }
 
