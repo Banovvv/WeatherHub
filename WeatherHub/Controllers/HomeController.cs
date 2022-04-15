@@ -26,6 +26,7 @@ namespace WeatherHub.Controllers
             HttpContext context = HttpContext;
 
             string ip = GetClientIPAddress(context);
+            var ipOtherOption = Request.HttpContext.Connection.RemoteIpAddress;
 
             ViewBag.Forecast = forecast;
             ViewBag.Rain = rain;
