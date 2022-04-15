@@ -65,7 +65,7 @@
 			<div class="weatherCard">
 				<div class="currentTemp">
 					<span class="day">@now.DayOfWeek</span>
-					<span class="date">@now.ToLongDateString()</span>
+					<span class="date">@now.ToString("dd MMM yyyy")</span>
 					<span class="temp">@Math.Round(ViewBag.Forecast.Current.Temperature)&deg;</span>
 					<span class="location">Lovech</span>
 				</div>

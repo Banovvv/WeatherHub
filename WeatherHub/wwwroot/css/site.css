@@ -177,20 +177,20 @@ body {
 }
 
 .temp {
-    font-size: 90px;
+    font-size: 95px;
     text-align: center;
     display: block;
     font-weight: 100;
     color: rgb(255, 255, 255);
-    padding: 90px 50px 0;
+    padding: 90px 45px 0;
 }
 
 .location {
+    font-size: 35px;
     color: rgb(255, 255, 255);
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 40px;
     display: block;
     padding: 0px 0px 0px;
 }
