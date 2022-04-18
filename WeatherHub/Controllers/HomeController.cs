@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
+using SimpleWeather;
 using System.Diagnostics;
 using WeatherHub.Models;
-using SimpleWeather;
-using System;
-using System.Web;
-using Microsoft.AspNetCore.Http.Features;
 
 namespace WeatherHub.Controllers
 {
